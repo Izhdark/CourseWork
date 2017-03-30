@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="186.0" style="-fx-background-color: #BC8F8F;" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8.0.91" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.mainDerictory.controllers.drawerController">
+   <children>
+      <ImageView fitHeight="112.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="444.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../images/back.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutY="105.0" onAction="#actionCalculate" prefHeight="35.0" prefWidth="176.0" ripplerFill="#c34141" style="-fx-background-color: #DCDCDC;" text="Посчитать коэффициенты" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <JFXButton buttonType="RAISED" layoutY="145.0" onAction="#actionDelete" prefHeight="35.0" prefWidth="176.0" ripplerFill="#bc4242" style="-fx-background-color: #DCDCDC;" text="Удалить элемент в таблице" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <JFXButton buttonType="RAISED" layoutY="185.0" prefHeight="35.0" prefWidth="137.0" ripplerFill="#bc4040" style="-fx-background-color: #DCDCDC;" text="Выгрузить" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <JFXButton buttonType="RAISED" layoutY="225.0" onAction="#btnExit" prefHeight="35.0" ripplerFill="#bf4141" style="-fx-background-color: #DCDCDC;" text="Выход из программы" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.validation.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="648.0" style="-fx-background-color: #F5F5F5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.mainDerictory.controllers.calculateController">
+   <children>
+      <JFXButton fx:id="btnRecordTable" buttonType="RAISED" layoutX="276.0" layoutY="533.0" onAction="#actionRecord" prefHeight="25.0" prefWidth="181.0" ripplerFill="#ee3c3c" style="-fx-background-color: #778899;" text="Записать данные в таблицу" AnchorPane.leftAnchor="276.0" AnchorPane.rightAnchor="191.0" />
+      <JFXButton fx:id="btnCancel" buttonType="RAISED" cancelButton="true" layoutX="477.0" layoutY="533.0" onAction="#actionCancel" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #778899;" text="Выход" AnchorPane.rightAnchor="40.0" />
+      <TabPane layoutX="14.0" prefHeight="518.0" prefWidth="648.0" stylesheets="@../css/main.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Ввод данных для расчета δmax">
+            <content>
+              <AnchorPane>
+                     <children>
+                        <TabPane layoutX="6.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <tabs>
+                            <Tab text="Расчет δц">
+                              <content>
+                                <AnchorPane fx:id="anchorPane" minHeight="-Infinity" minWidth="-Infinity">
+                                       <children>
+                                          <JFXComboBox fx:id="comboType" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="268.0" promptText=" Выбирете материал ремня" />
+                                          <JFXTextField fx:id="tfPower" labelFloat="true" layoutX="11.0" layoutY="133.0" maxWidth="249.0" minWidth="123.0" prefHeight="31.0" prefWidth="276.0" promptText="Введите мощность N" />
+                                          <JFXTextField fx:id="tfRotationFrequencyе" labelFloat="true" layoutX="11.0" layoutY="176.0" maxWidth="248.0" minWidth="248.0" prefHeight="31.0" prefWidth="276.0" promptText="Введите частоту вращения меньшего шкива n1" />
+                                          <JFXComboBox fx:id="comboParam" layoutX="14.0" layoutY="47.0" prefHeight="25.0" prefWidth="267.0" promptText="Выбирете тип параметра при D1/δ " />
+                                          <JFXTextField fx:id="tfOneValue" labelFloat="true" layoutX="13.0" layoutY="88.0" maxWidth="250.0" minWidth="204.0" prefHeight="31.0" prefWidth="276.0" promptText="Введите значение отношения D1/δ " />
+                                          <JFXButton fx:id="btnCalculate" buttonType="RAISED" layoutX="29.0" layoutY="400.0" onAction="#actionCalculate" prefHeight="25.0" prefWidth="181.0" ripplerFill="#c93d3d" style="-fx-background-color: #778899;" text="Рассчитать" AnchorPane.bottomAnchor="6.0" />
+                                          <JFXTextField fx:id="tfD1" focusColor="#6d81bc" layoutX="324.0" layoutY="14.0" maxWidth="251.0" minWidth="251.0" prefHeight="31.0" prefWidth="251.0">
+                                             <unFocusColor>
+                                                <LinearGradient endX="1.0" endY="1.0" startX="0.780952380952381">
+                                                   <stops>
+                                                      <Stop color="#963a3a" />
+                                                      <Stop color="#bcd1d6" offset="1.0" />
+                                                   </stops>
+                                                </LinearGradient>
+                                             </unFocusColor></JFXTextField>
+                                          <JFXTextField fx:id="tfThiknessOftheBelt" layoutX="324.0" layoutY="44.0" maxWidth="246.0" minWidth="251.0" prefHeight="31.0" prefWidth="251.0" unFocusColor="#c34444" />
+                                          <JFXTextField fx:id="tfBendingStress" layoutX="324.0" layoutY="72.0" maxWidth="240.0" minWidth="251.0" prefHeight="31.0" prefWidth="240.0" unFocusColor="#bc4747" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab fx:id="tapSigmap" text="Расчет δр">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <JFXComboBox fx:id="comboInitialVoltage" layoutX="15.0" layoutY="26.0" prefHeight="25.0" prefWidth="342.0" promptText="Выбирете начальное напряжение δ0" />
+                                          <JFXComboBox fx:id="comboC0" layoutX="11.0" layoutY="159.0" prefHeight="25.0" prefWidth="342.0" promptText="Выбирете коэффициент С0" />
+                                          <JFXComboBox fx:id="comboSecondPartC1" layoutX="11.0" layoutY="230.0" prefHeight="25.0" prefWidth="342.0" promptText="Выбирете С1 в зависимости от угла обхвата" />
+                                          <JFXTextField fx:id="tfSpeed" labelFloat="true" layoutX="11.0" layoutY="267.0" maxWidth="351.0" minWidth="347.0" prefHeight="31.0" prefWidth="347.0" promptText="Введите скорость ремня" />
+                                          <JFXComboBox fx:id="comboSecondPartC2" layoutX="15.0" layoutY="298.0" prefHeight="25.0" prefWidth="342.0" promptText="Выбирете коэффициент С2 в зависимости от скорости" />
+                                          <JFXComboBox fx:id="comboSecondPartCharacter" layoutX="15.0" layoutY="323.0" prefHeight="25.0" prefWidth="342.0" promptText="Выбирете характер нагрузки" />
+                                          <JFXComboBox fx:id="comboTypeOfEngine" layoutX="16.0" layoutY="348.0" prefHeight="25.0" prefWidth="342.0" promptText="Выбирете тип приводного двигателя" />
+                                          <JFXComboBox fx:id="comboSecondPartC3" layoutX="16.0" layoutY="373.0" prefHeight="25.0" prefWidth="342.0" promptText="Выбирете коэффициент С3" />
+                                          <JFXComboBox fx:id="comboA" layoutX="13.0" layoutY="51.0" prefHeight="25.0" prefWidth="342.0" promptText="Выбор коэффициента А" />
+                                          <JFXComboBox fx:id="comboW" layoutX="12.0" layoutY="76.0" prefHeight="25.0" prefWidth="342.0" promptText="Выбор коэффицинета W" />
+                                          <JFXButton buttonType="RAISED" layoutX="29.0" layoutY="406.0" onAction="#actionCalculateSecondPart" prefHeight="3.0" prefWidth="181.0" style="-fx-background-color: #778899;" text="Рассчитать" />
+                                          <JFXRadioButton fx:id="radio1" layoutX="16.0" layoutY="110.0" onAction="#radioSelect" text="Автоматическое натяжение">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="tension" />
+                                             </toggleGroup>
+                                          </JFXRadioButton>
+                                          <JFXRadioButton fx:id="radio2" layoutX="16.0" layoutY="135.0" onAction="#radioSelect" text="Неавтоматическое натяжение" toggleGroup="$tension" />
+                                          <JFXTextField fx:id="tfAngle" labelFloat="true" layoutX="222.0" layoutY="128.0" promptText="Введите угол наклона" />
+                                          <JFXTextField fx:id="tfSecondPartAngle" labelFloat="true" layoutX="11.0" layoutY="199.0" maxWidth="347.0" minWidth="347.0" prefHeight="31.0" prefWidth="347.0" promptText="Введите угол обхвата α на малом шкиве" />
+                                          <JFXTextField fx:id="tfusefulVoltage1" layoutX="411.0" layoutY="23.0" maxWidth="225.0" minWidth="225.0" prefHeight="31.0" prefWidth="225.0" />
+                                          <JFXTextField fx:id="tfb" layoutX="411.0" layoutY="48.0" maxWidth="224.0" minWidth="224.0" prefHeight="31.0" prefWidth="224.0" />
+                                          <JFXTextField fx:id="tfF" layoutX="411.0" layoutY="73.0" maxWidth="219.0" minWidth="224.0" prefHeight="31.0" prefWidth="219.0" />
+                                          <JFXTextField fx:id="tfsigmap" layoutX="411.0" layoutY="101.0" maxWidth="226.0" minWidth="224.0" prefHeight="25.0" prefWidth="219.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tabTch" text="Ввод данных для расчета долговечности tч ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <tabs>
+                            <Tab text="Долговечность при i=1,Zш=2,u=1">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <JFXComboBox fx:id="combotch0" layoutX="26.0" layoutY="89.0" prefHeight="25.0" prefWidth="257.0" promptText="Выбирете значение долговечности tч0" />
+                                          <JFXTextField fx:id="tfAnswerThirdPart" layoutX="366.0" layoutY="24.0" maxWidth="209.0" minWidth="209.0" prefHeight="31.0" prefWidth="209.0" />
+                                          <JFXTextField fx:id="tfAttitude" labelFloat="true" layoutX="20.0" layoutY="55.0" maxWidth="269.0" minWidth="251.0" prefHeight="31.0" prefWidth="269.0" promptText="Ввеите значение отношения D1/δ" />
+                                          <JFXButton buttonType="RAISED" layoutX="26.0" layoutY="406.0" onAction="#actionCalculateThirdPart" prefHeight="25.0" prefWidth="181.0" style="-fx-background-color: #778899;" text="Рассчитать" />
+                                          <JFXComboBox fx:id="comboSigmap" layoutX="26.0" layoutY="14.0" prefHeight="25.0" prefWidth="257.0" promptText="Вибирете значение δр" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Долговечность при  при i≠ 1,u≠1">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <JFXComboBox fx:id="comboU" layoutX="14.0" layoutY="45.0" prefHeight="25.0" prefWidth="263.0" promptText="Выберете передаточное число u" />
+                                          <JFXComboBox fx:id="comboCu" layoutX="14.0" layoutY="78.0" prefHeight="25.0" prefWidth="263.0" promptText="Выберете значение коэффициента Си" />
+                                          <JFXButton buttonType="RAISED" layoutX="27.0" layoutY="406.0" onAction="#calculateForthPart" prefHeight="25.0" prefWidth="181.0" style="-fx-background-color: #778899;" text="Рассчитать" />
+                                          <JFXTextField fx:id="tfTch" layoutX="362.0" layoutY="14.0" minWidth="200.0" prefHeight="31.0" prefWidth="200.0" />
+                                          <JFXTextField fx:id="tfCu" layoutX="362.0" layoutY="42.0" minWidth="200.0" prefHeight="31.0" prefWidth="200.0" />
+                                          <JFXTextField fx:id="tfCp" layoutX="362.0" layoutY="70.0" minWidth="200.0" prefHeight="31.0" prefWidth="200.0" />
+                                          <JFXComboBox fx:id="comboTreatment" layoutX="14.0" layoutY="17.0" prefHeight="25.0" prefWidth="263.0" promptText="Введите отношение δр/δц  " />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
